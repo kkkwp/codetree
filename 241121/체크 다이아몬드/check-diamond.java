@@ -6,9 +6,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         for (int i=1; i<=n; i++) {
-            for (int j=1; j<=n-1; j++)
+            for (int j=1; j<=n-i; j++)
                 System.out.print(' ');
-            for (int j=1; j<=i; i++)
+            for (int j=1; j<=i; j++)
                 System.out.print("* ");
             System.out.println();
         }
