@@ -9,7 +9,7 @@ public class Main {
         int num = 1;
         int[][] arr2d = new int[n+1][n+1];
         for (int j=n; j>=1; j--) {
-            if (j%2 == 0) {
+            if ((n-j)%2 == 0) {
                 for (int i=n; i>=1; i--)
                     arr2d[i][j] = num++;
             } else {
