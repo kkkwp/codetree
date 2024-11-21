@@ -7,7 +7,7 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        int[][] arr2d = new int[n+1][m+1];
+        int[][] arr2d = new int[n+1][n+1];
         for (int i=0; i<m; i++) {
             int r = sc.nextInt();
             int c = sc.nextInt();
@@ -15,7 +15,7 @@ public class Main {
         }
 
         for (int i=1; i<=n; i++) {
-            for (int j=1; j<=m; j++)
+            for (int j=1; j<=n; j++)
                 System.out.print(arr2d[i][j] + " ");
             System.out.println();
         }
