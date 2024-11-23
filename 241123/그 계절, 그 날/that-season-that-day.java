@@ -41,6 +41,6 @@ public class Main {
         int y = sc.nextInt();
         int m = sc.nextInt();
         int d = sc.nextInt();
-        System.out.print(isValidDate(y, m, d) ? getSeason(y, m, d) : -1);
+        System.out.print(isValidDate(y, m, d) ? getSeason(m) : -1);
     }
 }
