@@ -24,7 +24,7 @@ public class Main {
 
         int cnt = 0;
         for (int i=a; i<=b; i++) {
-            if (isMasicNumber(i) || contains369(n))
+            if (isMasicNumber(i) || contains369(i))
                 cnt++;
         }
         System.out.print(cnt);
