@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Main {
     static boolean isMasicNumber(int n) {
         int sum = 0;
-        int tmp = n;
         while (n > 0) {
             sum += n%10;
             n /= 10;
