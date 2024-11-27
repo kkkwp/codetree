@@ -6,7 +6,7 @@ public class Main {
             return 1;
         if (n==2)
             return 2;
-        return recur((int)Math.floor(n/3)) + recur(n-1);
+        return recur(n/3) + recur(n-1);
     }
 
     public static void main(String[] args) {
