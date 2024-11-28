@@ -22,11 +22,7 @@ public class Main {
             if (startsWithT(word))
                 words[cnt++] = word;
         }
-        
-        String[] matched = new String[cnt];
-        for (int i=0; i<cnt; i++)
-            matched[i] = words[i];
-        Arrays.sort(matched);
-        System.out.print(matched[k-1]);
+        Arrays.sort(words, 0, cnt);
+        System.out.print(words[k-1]);
     }
 }
