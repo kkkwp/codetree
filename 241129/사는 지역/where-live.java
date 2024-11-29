@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-class Info {
+class Person {
     String name, addr, city;
 
-    Info (String name, String addr, String city) {
+    Person (String name, String addr, String city) {
         this.name = name;
         this.addr = addr;
         this.city = city;
@@ -16,12 +16,22 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        Info[] info = new Info[n];
-        for (int i=0; i<n; i++)
-            info[i] = new Info(sc.next(), sc.next(), sc.next());
-        
-        System.out.println("name " + info[n-1].name);
-        System.out.println("addr " + info[n-1].addr);
-        System.out.print("city " + info[n-1].city);
+        Person[] people = new Person[n];
+        for (int i=0; i<n; i++) {
+            String name = sc.next();
+            String addr = sc.next();
+            String city = sc.next();
+            people[i] = new Person(name, addr, city);
+        }
+
+        Person slowest = people[0];
+        for (int i=1; i<n; i++) {
+            if (people[i].name.compareTo(slowest.name) > 0)
+                slowest = people[i];
+        }
+
+        System.out.println("name " + slowest.name);
+        System.out.println("addr " + slowest.addr);
+        System.out.print("city " + slowest.city);
     }
 }
