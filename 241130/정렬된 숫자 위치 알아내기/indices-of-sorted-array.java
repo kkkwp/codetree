@@ -26,11 +26,11 @@ public class Main {
         for (int i=0; i<n; i++)
             elements[i] = new Element(sc.nextInt(), i+1);
         
-        Element[] sorted = Arrays.copyOf(elements, n);
-        Arrays.sort(sorted);
+        Arrays.sort(elements);
+        
         int[] rank = new int[n];
         for (int i=0; i<n; i++)
-            rank[sorted[i].idx-1] = i+1;
+            rank[elements[i].idx-1] = i+1;
         
         for (int r : rank)
             System.out.print(r + " ");
