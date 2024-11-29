@@ -31,7 +31,8 @@ public class Main {
                 
         int diff = getDays(m2, d2) - getDays(m1, d1);
         int cnt = diff/7;
-        cnt += (diff%7 - targetDay + 1);
+        if (diff%7 >= targetDay)
+            cnt++;
         System.out.print(cnt);
     }
 }
