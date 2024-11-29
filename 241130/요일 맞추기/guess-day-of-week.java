@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     static int[] daysOfMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    static String[] days = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+    static String[] days = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
 
     static int getDays(int m, int d) {
         int sum = 0;
@@ -20,7 +20,7 @@ public class Main {
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
 
-        int diff = Math.abs(getDays(m2, d2) - getDays(m1, d1));
-        System.out.print(days[diff%7-1]);
+        int diff = getDays(m2, d2) - getDays(m1, d1);
+        System.out.print(days[(diff%7+7)%7]);
     }
 }
