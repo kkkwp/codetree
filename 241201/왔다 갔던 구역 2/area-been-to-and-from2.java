@@ -15,7 +15,7 @@ public class Main {
             char dir = sc.next().charAt(0);
             if (dir == 'L') {
                 for (int j=0; j<x; j++) {
-                    line[cur + OFFSET]++;
+                    line[cur-1 + OFFSET]++;
                     cur--;
                 }
             } else {
