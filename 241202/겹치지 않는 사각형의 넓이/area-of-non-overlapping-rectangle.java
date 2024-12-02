@@ -18,21 +18,16 @@ public class Main {
         }
 
         int[][] grid = new int[2001][2001];
-        for (int i=0; i<3; i++) {
-            for (int x=Math.min(x1[i], x2[i]); x<Math.max(x1[i], x2[i]); x++) {
-                for (int y=Math.min(y1[i], y2[i]); y<Math.max(y1[i], y2[i]); y++) {
-                    grid[x][y] = i+3;
-                }
-            }
-        }
+        for (int i=0; i<3; i++)
+            for (int x=x1[i]; x<x2[i]; x++)
+                for (int y=y1[i]; y<y2[i]; y++)
+                    grid[x][y] = i+1;
 
         int cnt = 0;
-        for (int i=0; i<2001; i++) {
-            for (int j=0; j<2001; j++) {
-                if (grid[i][j] == 3 || grid[i][j] == 4)
+        for (int i=0; i<=2000; i++)
+            for (int j=0; j<=2000; j++)
+                if (grid[i][j] == 1 || grid[i][j] == 2)
                     cnt++;
-            }
-        }
         System.out.print(cnt);
     }
 }
