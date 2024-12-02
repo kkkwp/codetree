@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    static final int OFFSET = 100;
+    static final int OFFSET = 1000;
 
     public static void main(String[] args) {
         // 여기에 코드를 작성해주세요.
@@ -17,10 +17,10 @@ public class Main {
             y2[i] = sc.nextInt() + OFFSET;
         }
 
-        int[][] grid= new int[2001][2001];
+        int[][] grid = new int[2001][2001];
         for (int i=0; i<3; i++) {
-            for (int x=x1[i]; x<x2[i]; x++) {
-                for (int y=y1[i]; y<y2[i]; y++) {
+            for (int x=Math.min(x1[i], x2[i]); x<Math.max(x1[i], x2[i]); x++) {
+                for (int y=Math.min(y1[i], y2[i]); y<Math.max(y1[i], y2[i]); y++) {
                     grid[x][y] = i+3;
                 }
             }
