@@ -14,16 +14,14 @@ public class Main {
             int x = sc.nextInt();
             char dir = sc.next().charAt(0);
             if (dir == 'L') {
-                while (x > 0) {
+                while (x-- > 0) {
                     line[cur] = 1;
-                    x--;
-                    if (x > 0)
+                    if (x > 0) 
                         cur--;
                 }
             } else {
-                while (x > 0) {
+                while (x-- > 0) {
                     line[cur] = -1;
-                    x--;
                     if (x > 0)
                         cur++;
                 }
