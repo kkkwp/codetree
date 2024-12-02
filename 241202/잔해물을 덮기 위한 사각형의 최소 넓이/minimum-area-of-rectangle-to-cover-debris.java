@@ -38,6 +38,9 @@ public class Main {
                 }
             }
         }
-        System.out.print((maxX - minX + 1) * (maxY - minY + 1));
+        if (minX > maxX || minY > maxY)
+            System.out.print(0);
+        else
+            System.out.print((maxX - minX + 1) * (maxY - minY + 1));
     }
 }
