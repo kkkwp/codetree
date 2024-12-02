@@ -14,15 +14,10 @@ public class Main {
             int y1 = sc.nextInt() + OFFSET;
             int x2 = sc.nextInt() + OFFSET;
             int y2 = sc.nextInt() + OFFSET;
-            if (i%2==1) {
-                for (int x=x1; x<x2; x++)
-                    for (int y=y1; y<y2; y++)
-                        grid[x][y] = 1;
-            } else {
-                for (int x=x1; x<x2; x++)
-                    for (int y=y1; y<y2; y++)
-                        grid[x][y] = -1;
-            }
+            
+            for (int x=x1; x<x2; x++)
+                for (int y=y1; y<y2; y++)
+                    grid[x][y] = i%2==1 ? 1 : -1;
         }
 
         int blue = 0;
