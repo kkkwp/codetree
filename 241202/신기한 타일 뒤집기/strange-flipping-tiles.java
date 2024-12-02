@@ -14,14 +14,18 @@ public class Main {
             int x = sc.nextInt();
             char dir = sc.next().charAt(0);
             if (dir == 'L') {
-                for (int j=1; j<=x; j++) {
-                    cur--;
+                while (x > 0) {
                     line[cur] = 1;
+                    x--;
+                    if (x > 0)
+                        cur--;
                 }
             } else {
-                for (int j=0; j<x; j++) {
+                while (x > 0) {
                     line[cur] = -1;
-                    cur++;
+                    x--;
+                    if (x > 0)
+                        cur++;
                 }
             }
         }
