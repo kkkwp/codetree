@@ -14,7 +14,7 @@ public class Main {
             int x = sc.nextInt();
             char dir = sc.next().charAt(0);
             if (dir == 'L') {
-                for (int j=0; j<x; j++) {
+                for (int j=1; j<=x; j++) {
                     cur--;
                     line[cur] = 1;
                 }
