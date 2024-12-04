@@ -7,6 +7,8 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
+        int totalTime = 0;
+
         int[] a = new int[1_000_000];
         int cur = 0;
         int time = 0;
@@ -33,7 +35,7 @@ public class Main {
             }
         }
 
-        for (int i=0; i<1_000_000; i++) {
+        for (int i=0; i<time; i++) {
             if (a[i] == b[i]) {
                 System.out.print(i+1);
                 return;
