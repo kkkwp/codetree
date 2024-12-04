@@ -8,18 +8,15 @@ public class Main {
         int m = sc.nextInt();
         int k = sc.nextInt();
 
-        int[] students = new int[n+1];
-        int answer = -1;
+        int[] penalties = new int[n+1];
         while (m-->0) {
-            int penalty = sc.nextInt();
-            for (int i=1; i<=n; i++) {
-                if (students[i] >= k) {
-                    answer = i;
-                    break;
-                }
+            int student = sc.nextInt();
+            penalties[student]++;
+            if (penalties[student] >= k) {
+                System.out.print(student);
+                return;
             }
-            students[penalty]++;
         }
-        System.out.print(answer);
+        System.out.print(-1);
     }
 }
