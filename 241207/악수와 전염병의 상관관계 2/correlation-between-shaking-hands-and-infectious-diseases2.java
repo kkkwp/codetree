@@ -24,10 +24,10 @@ public class Main {
     public static void main(String[] args) {
         // 여기에 코드를 작성해주세요.
         Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        k = sc.nextInt();
-        p = sc.nextInt();
-        t = sc.nextInt();
+        n = sc.nextInt(); // 개발자 수
+        k = sc.nextInt(); // 전염 제한 횟수
+        p = sc.nextInt(); // 최초 감염자
+        t = sc.nextInt(); // 악수 횟수
 
         Handshake[] handshakes = new Handshake[t];
         for (int i=0; i<t; i++) {
@@ -36,28 +36,22 @@ public class Main {
             int y = sc.nextInt();
             handshakes[i] = new Handshake(time, x, y);
         }
+
         Arrays.sort(handshakes);
 
-        cnt = new int[n+1];
         infected = new boolean[n+1];
-        cnt[p] = k;
+        cnt = new int[n+1];
         infected[p] = true;
-        for (Handshake handshake : handshakes) {
-            int x = handshake.x;
-            int y = handshake.y;
-
-            if (infected[x] && cnt[x]>0) {
-                if (!infected[y])
-                    cnt[y] = k;
+        for (Handshake hs : handshakes) {
+            int x = hs.x;
+            int y = hs.y;
+            if (infected[x] && cnt[x] < k) {
                 infected[y] = true;
-                cnt[x]--;
+                cnt[x]++;
             }
-
-            if (infected[y] && cnt[y]>0) {
-                if (!infected[x])
-                    cnt[x] = k;
+            if (infected[y] && cnt[y] < k) {
                 infected[x] = true;
-                cnt[y]--;
+                cnt[y]++;
             }
         }
 
