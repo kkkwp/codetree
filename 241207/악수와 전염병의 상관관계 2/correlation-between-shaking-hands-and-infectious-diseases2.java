@@ -39,20 +39,22 @@ public class Main {
 
         Arrays.sort(handshakes);
 
-        infected = new boolean[n+1];
         cnt = new int[n+1];
+        infected = new boolean[n+1];
         infected[p] = true;
         for (Handshake hs : handshakes) {
             int x = hs.x;
             int y = hs.y;
-            if (infected[x] && cnt[x] < k) {
-                infected[y] = true;
+
+            if (infected[x])
                 cnt[x]++;
-            }
-            if (infected[y] && cnt[y] < k) {
-                infected[x] = true;
+            if (infected[y])
                 cnt[y]++;
-            }
+            
+            if (infected[x] && cnt[x] <= k)
+                infected[y] = true;
+            if (infected[y] && cnt[y] <= k)
+                infected[x] = true;
         }
 
         for (int i=1; i<=n; i++)
