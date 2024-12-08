@@ -6,7 +6,7 @@ public class Main {
     static int n, m;
 
     static boolean inRange(int x, int y) {
-        return 0<=x && x<n && 0<=y && y<n;
+        return 0<=x && x<n && 0<=y && y<m;
     }
 
     public static void main(String[] args) {
