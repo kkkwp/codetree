@@ -10,7 +10,7 @@ public class Main {
         return 0<=x && x<n && 0<=y && y<n;
     }
 
-    static int isStable(int x, int y) {
+    static boolean isStable(int x, int y) {
         int cnt = 0;
         for (int dir=0; dir<4; dir++) {
             int nx = x + dx[dir];
@@ -18,7 +18,7 @@ public class Main {
             if (inRange(nx, ny) && grid[nx][ny] == 1)
                 cnt++;
         }
-        return cnt;
+        return cnt == 3;
     }
 
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class Main {
             int r = sc.nextInt() - 1;
             int c = sc.nextInt() - 1;
             grid[r][c] = 1;
-            System.out.println(isStable(r, c) == 3 ? 1 : 0);
+            System.out.println(isStable(r, c) ? 1 : 0);
         }
     }
 }
